@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This guide will show you how to deploy a Grails application to Heroku and bind it to the Postgres database service.
 
 ## Prerequisites
@@ -175,3 +176,7 @@ Of course you don't have to use Jetty at all. As you have seen, you are in full 
 ## Grails Heroku plugin
 
 The [Grails Heroku plugin](http://grails.org/plugin/heroku) provides a set of simple commands to set up your Grails app with Heroku add-on services like [Postgres](https://addons.heroku.com/heroku-postgresql), [Memcached](https://addons.heroku.com/memcache), [Redis](https://addons.heroku.com/redistogo), MongoDB from [MongoLabs](https://addons.heroku.com/mongolab) or [MongoHQ](https://addons.heroku.com/mongohq) and [RabbitMQ](https://addons.heroku.com/rabbitmq).
+=======
+earmuff.me
+==========
+>>>>>>> c93c9d0b2d1e8951869bf21e58df4652d295c8a3
