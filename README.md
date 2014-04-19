@@ -5,6 +5,7 @@ Earmuff.me is a social network to keep track on what tv episode your currently o
 # Requirements
 
 Grails 2.3.7+ [Learn more](http://grails.org)
+
 Postgres 9.1+
 
 # License
