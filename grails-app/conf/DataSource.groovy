@@ -4,6 +4,7 @@ dataSource {
     username = "sa"
     password = ""
 }
+
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = false
@@ -13,8 +14,21 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            if (System.env.DATABASE_URL) {
+                dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+                driverClassName = "org.postgresql.Driver"
+                dialect = org.hibernate.dialect.PostgreSQLDialect
+
+                uri = new URI(System.env.DATABASE_URL)
+
+                url = "jdbc:postgresql://"+uri.host+uri.path
+                username = uri.userInfo.split(":")[0]
+                password = uri.userInfo.split(":")[1]
+                logSql = true
+            } else {
+                dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+                url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            }
         }
     }
     test {
@@ -28,7 +42,7 @@ environments {
             dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
             dialect = org.hibernate.dialect.PostgreSQLDialect
-        
+
             uri = new URI(System.env.DATABASE_URL?:"postgres://test:test@localhost/test")
 
             url = "jdbc:postgresql://"+uri.host+uri.path
