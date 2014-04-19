@@ -14,3 +14,6 @@ Earmuff.me is released under the [MIT](http://www.opensource.org/licenses/mit-li
 
 # Installation
 
+# Resources
+
+1. [TheTVDB](http://thetvdb.com/)
