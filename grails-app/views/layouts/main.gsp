@@ -26,11 +26,10 @@
         <div class="container">
             <div id="sidebar">
                 <ul>
-                    <li><a>Profile</a></li>
+                    <li><a>Sign Out</a></li>
                     <li><a>Trending</a></li>
                     <li><a href="#">Groups</a></li>
                     <li></li>
-                    <li><a href="#">Sign Out</a></li>
                 </ul>
             </div>
             <div class="main-content">
@@ -64,7 +63,7 @@
 
             });
 
-            $(".swipe-area").swipe({
+            $("#swipe-area").swipe({
                 swipeStatus:function(event, phase, direction, distance, duration, fingers)
                     {
                         if (phase=="move" && direction =="right") {
